@@ -1,0 +1,73 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene background="color: pink">
+      <!-- Write your code below: -->
+      <a-assets>
+        <img id="stones" src="./materials/cebra.jpg">
+        <img id="dogs" src="./materials/dogs.jpeg">
+        <img id="pavo" src="./materials/pavo.jpeg">
+        <img id="stones" src="./materials/cebra.jpg">
+        <img id="sky" src="./materials/mountains1.jpg">
+        <img id="grass" src="/materials/grass.jpg">
+        <a-asset-item 
+        id="character" 
+        src="./materials/codey.gltf"></a-asset-item>
+        <audio 
+        id="background"
+        src="noise.wav"></audio>
+      </a-assets>
+      <a-sound 
+      src="#background" 
+      autoplay="true"
+      position="-3 1 -4"></a-sound>
+      <a-text 
+      value="Hello A-Frame!"
+      color="#BBB"
+      align="left"
+      position="-0.9 0.2 -3"
+      scale="1.5 1.5 1.5"></a-text>
+      <!-- <a-light 
+    type="ambient" 
+    color="#445451"></a-light> -->
+    <a-light 
+    type="point" 
+    intensity="2" 
+    position="2 4 4"></a-light>
+
+      <a-gltf-model 
+      src="#character"
+      position="0 2 -4"
+      scale="0.5 0.5 0.5"
+      > </a-gltf-model>
+
+      <a-box 
+      color="red" 
+      position="2 2 -5" 
+      rotation="0 45 45" 
+      animation="property: object3D.position.x;
+        to: 3; 
+        dir: alternate; 
+        dur: 2000; 
+        loop: true">
+    </a-box>
+  
+      <a-box position="0 2 -5" rotation="0 45 45" material="src: #stones;"></a-box>
+      <a-box position="0 4 -5" rotation="0 45 45" material="src: #dogs;"></a-box>
+      <a-box position="-4 2 -5" rotation="0 45 45" src="#stones"></a-box>
+      <a-box position="4 2 -5" rotation="0 45 45" src="#pavo"></a-box>
+      <a-plane 
+      src="#grass" 
+      rotation="-90 0 0" 
+      width="20" 
+      height="20"
+      repeat="10 10"></a-plane>
+
+      <a-sky src="#sky"></a-sky>
+    </a-scene>
+  </body>
+</html>
+<!-- Mac: control + option + i
+Windows: ctrl + alt + i -->
